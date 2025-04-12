@@ -1,14 +1,39 @@
 import React, { useState } from 'react';
 import styles from './Login.module.css';
-
+import { loginUser } from './api';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState('');
+  const navigate=useNavigate()
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ email, password, rememberMe });
+
+    setError('');
+
+  
+    const credentials = { email, password }; // Make sure credentials are correctly set
+  
+    try {
+      const result = await loginUser(credentials);
+      if (result.success) {
+        localStorage.setItem('authToken', result.token);  // or sessionStorage.setItem('token', result.token);;
+        navigate('/'); // Redirect to home page or dashboard
+
+        // Redirect to another page or store token here
+      } else {
+        setError(result.message || 'Login failed');
+      }
+    } catch (err) {
+      console.error('Error during login:', err);
+      setError('An error occurred. Please try again.');
+    } finally {
+
+    }
   };
 
   return (

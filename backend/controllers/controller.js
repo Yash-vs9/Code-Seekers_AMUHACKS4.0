@@ -29,9 +29,20 @@ const register = async (req, res) => {
 // Login function
 const login = async (req, res) => {
   const { email, password } = req.body;
+
+  // Check if email and password are provided
+  if (!email || !password) {
+    return res.status(400).json({
+      success: false,
+      message: 'Email and password are required',
+    });
+  }
+
   try {
     const query = 'SELECT * FROM users WHERE email = ?';
     const [rows] = await db.query(query, [email]);
+
+    // If no user found with the provided email
     if (rows.length === 0) {
       return res.status(401).json({
         success: false,
@@ -41,6 +52,8 @@ const login = async (req, res) => {
 
     const user = rows[0];
     const isMatch = await bcrypt.compare(password, user.password);
+
+    // If password doesn't match
     if (!isMatch) {
       return res.status(401).json({
         success: false,
@@ -48,16 +61,27 @@ const login = async (req, res) => {
       });
     }
 
-    const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, { expiresIn: '1d' });
+    // Generate JWT token
+    const token = jwt.sign(
+      { id: user.id, email: user.email },
+      process.env.SECRET_KEY, // Ensure SECRET_KEY is stored in environment variables
+      { expiresIn: '1d' }
+    );
+
+    // Send token back in response
     res.json({
       success: true,
       token,
     });
   } catch (err) {
     console.error("Login Error:", err);
-    res.status(500).json({ success: false, message: 'Server error' });
+    res.status(500).json({
+      success: false,
+      message: 'Server error',
+    });
   }
 };
+
 
 // Update personal details function (protected route)
 const updateDetails = async (req, res) => {
