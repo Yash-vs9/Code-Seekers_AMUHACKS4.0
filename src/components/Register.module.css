@@ -1,0 +1,98 @@
+.container {
+  background: linear-gradient(to right, #d9f4ec, #a8edea);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.registerContainer {
+  width: 360px;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(152, 79, 212, 0.2);
+  text-align: center;
+  animation: floatUp 0.8s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.registerContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3), inset 0 0 24px rgba(152, 79, 212, 0.3);
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inputField {
+  background: aliceblue;
+  box-shadow: inset 3px 3px 5px #1c1e1f, inset -5px -5px 10px #e6f3fc;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center; /* centers child vertically */
+}
+
+.inputField input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  color: rgb(126, 7, 224);
+  width: 100%;
+  padding: 0; /* remove default padding */
+  margin: 0;
+  height: 100%;
+  line-height: 1.5;
+}
+
+.button {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 40%;
+  box-shadow: 5px 5px 10px #202f3f, inset 3px 3px 3px rgb(152, 79, 212);
+  transition: 0.5s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 
+    inset 3px 3px 6px #202f3f, 
+    inset -3px -3px 6px rgb(152, 79, 212),
+    0 0 10px rgba(152, 79, 212, 0.5),
+    0 0 20px rgba(152, 79, 212, 0.4);
+  background: linear-gradient(145deg, rgb(152, 79, 212), rgb(126, 7, 224));
+  color: white;
+  transform: scale(1.03);
+  transition: all 0.3s ease-in-out;
+}
+
+.switch {
+  margin-top: 5vh;
+  font-size: 14px;
+  color: rgb(126, 7, 224);
+}
+
+.switch a {
+  text-decoration: none;
+  color: #202f3f;
+}

@@ -1,0 +1,125 @@
+:root {
+  --primary-light: #e0f2f1;
+  --primary: #a5d6a7;
+  --primary-dark: #66bb6a;
+  --text-dark: #1b5e20;
+  --text-light: #f5f5f5;
+  --bg: #f0fdf4;
+  --white: #ffffff;
+  --gray: #e0e0e0;
+  --shadow1: rgba(76, 175, 80, 0.2);
+  --shadow2: rgba(56, 142, 60, 0.2);
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-dark);
+}
+
+/* Sidebar */
+.sidebar {
+  padding: 1.5rem 1rem;
+  background: var(--primary);
+  box-shadow: 2px 0 8px var(--shadow1);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: var(--white);
+  color: var(--text-dark);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 6px var(--shadow2);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar a:hover {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  transform: translateX(3px);
+}
+
+/* Main content */
+.main {
+  padding: 2rem;
+  background-color: var(--bg);
+  overflow-y: auto;
+}
+
+/* Container */
+.container {
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(102, 187, 106, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.container:hover {
+  box-shadow: 0 8px 20px rgba(102, 187, 106, 0.2);
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    height: auto;
+    overflow-x: auto;
+    width: 100%;
+    padding: 1rem;
+    justify-content: space-around;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+}

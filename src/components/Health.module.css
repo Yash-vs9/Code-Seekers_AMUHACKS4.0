@@ -1,0 +1,136 @@
+.healthPage {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(to right, #e0f2f1, #a7ffeb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.healthContainer {
+  max-width: 600px;
+  background-color: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0, 128, 128, 0.2);
+  border: 1px solid #b2dfdb;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.questionCard {
+  background: #f0fffb;
+  border-left: 6px solid #00bfa5;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.questionCard:hover {
+  box-shadow: 0 6px 12px rgba(0, 128, 128, 0.15);
+}
+
+.questionText {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00695c;
+  margin-bottom: 12px;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.optionItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #004d40;
+}
+
+.submitBtn {
+  margin-top: 20px;
+  background: linear-gradient(to right, #00bfa5, #1de9b6);
+  border: none;
+  width: 160px;
+  height: 42px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 4px 10px rgba(0, 150, 136, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background: linear-gradient(to right, #1de9b6, #00bfa5);
+  box-shadow: 0 6px 14px rgba(0, 150, 136, 0.4);
+  transform: translateY(-2px);
+}
+
+.back {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.retreat {
+  position: sticky;
+  top: 20px; 
+  margin-left: auto; 
+  margin-right: 0;
+
+  background: linear-gradient(to right, #00bfa5, #1de9b6);
+  border: none;
+  width: 160px;
+  height: 42px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 4px 10px rgba(0, 150, 136, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.retreat:hover {
+  background: linear-gradient(to right, #1de9b6, #00bfa5);
+  box-shadow: 0 6px 14px rgba(0, 150, 136, 0.4);
+  transform: translateY(-2px);
+}
+
+.scoreDisplay {
+  margin-top: 2rem;
+  background-color: #e6ffe6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #b2fab4;
+}
