@@ -1,0 +1,45 @@
+.container {
+    background-color: #e6f5ea;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+  }
+  
+  .heading {
+    text-align: center;
+    color: #2e7d32;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .card {
+    background: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+    border-left: 6px solid #66bb6a;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  }
+  
+  .card h3 {
+    margin: 0 0 0.5rem;
+    color: #388e3c;
+  }
+  
+  .card p {
+    margin: 0.25rem 0;
+    color: #555;
+  }

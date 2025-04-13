@@ -6,7 +6,7 @@ const ChatBot = () => {
     useEffect(() => {
 
         const script = document.createElement("script");
-        script.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js"; // Replace with your script URL
+        script.src = "https://cdn.botpress.cloud/webchat/v2.3/inject.js"; // Replace with your script URL
         script.async = true;
         document.body.appendChild(script);
     

@@ -6,6 +6,7 @@ import Register from './components/Register';
 import Home from './components/Home';
 import { ToastContainer } from 'react-toastify';
 import ChatBot from './components/ChatBot';
+import NearbyHospitals from './components/NearbyHospitals';
 import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Home />} />
         <Route path="/bot" element={<ChatBot />} />
+        <Route path="/loc" element={<NearbyHospitals />} />
       </Routes>
     </Router>
     <ToastContainer /> 

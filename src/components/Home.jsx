@@ -12,7 +12,7 @@ const HomePage = () => {
           </li>
           <li><a href="/test"><span>Health Test</span></a></li>
           <li><a href="/bot"><span>AI Chatbot</span></a></li>
-          <li><a href="/docs"><span>Medical Certificates</span></a></li>
+          <li><a href="/loc"><span>Find Nearby Hospitals</span></a></li>
           <li><a href="/profile"><span>Profile</span></a></li>
           <li><a href="/login"><span>Sign In</span></a></li>
         </ul>

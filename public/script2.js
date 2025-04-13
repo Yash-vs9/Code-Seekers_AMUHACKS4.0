@@ -1,5 +1,5 @@
 async function fetchAndInitializeBotpress() {
-    const response = await fetch("https://files.bpcontent.cloud/2025/02/06/14/20250206142548-WJWVT1YO.json");
+    const response = await fetch("https://files.bpcontent.cloud/2025/04/06/17/20250406172846-SNOKC2E7.json");
     const data = await response.json();
     const id = data.clientId;
   
