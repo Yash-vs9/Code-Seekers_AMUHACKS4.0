@@ -1,12 +1,42 @@
-# React + Vite
+# HealthCare - Hackathon Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+HealthCare is a web application built to enhance healthcare access by providing real-time medical information, AI-powered diagnostics, and a chat feature to improve user engagement. This project leverages technologies such as React, Node.js, and the Geoapify API for locating nearby hospitals.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- **Nearby Hospital Locator**: Find hospitals around your location using Geoapify API.
+- **AI Chatbot**: Interact with an AI-powered healthcare assistant.
+- **User Profile**: Manage personal information, health score, and more.
+- - **Health Score**: Get your health score just by answering some simple questions.
+
+## Tech Stack
+- **Frontend**: React, CSS, javascript.
+- **Backend**: Node.js, Express
+- **API**: Geoapify for location-based services
+- **Authentication**: JWT tokens for user login
+- **Database**: MySQL (using the `mysql2` library)
+- **Environment Variables**: `dotenv` for securely storing API keys and sensitive information
+
+## Dependencies
+Here are the essential dependencies installed in the project:
+
+### Frontend (React):
+- `react`
+- `react-router-dom`
+- `vite`
+- `dotenv`
+- `react-toastify`
+
+### Backend (Node.js/Express):
+- `express`
+- `mysql2`
+- `dotenv`
+- `nodemon`
+- `bycrypt`
+- `jsonwebtoken`
+- `cors`
+- `body-parser`
+
