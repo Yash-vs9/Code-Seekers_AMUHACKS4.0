@@ -1,0 +1,76 @@
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f8f2; /* Light green background */
+    padding: 2rem;
+  }
+  h2{
+    margin-right: 50px;
+  }
+  .heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #2e7d32; /* Dark green for heading */
+    margin-bottom: 1.5rem;
+  }
+  
+  .form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 1.2rem;
+  }
+  
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2e7d32;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    margin-top: 0.3rem;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #1de9b6; /* Light green on focus */
+  }
+  
+  button {
+    background: #00bfa5; /* Light green background */
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #1de9b6; /* Darker green on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .form {
+      padding: 1.5rem;
+    }
+  
+    input, button {
+      font-size: 0.9rem;
+    }
+  }

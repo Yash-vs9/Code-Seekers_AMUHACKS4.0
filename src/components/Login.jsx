@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import styles from './Login.module.css';
 import { loginUser } from './api';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 const Login = () => {
+  function isValidEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -14,6 +19,14 @@ const Login = () => {
     e.preventDefault();
 
     setError('');
+    if (!isValidEmail(email)) {
+      toast.error("Please Enter a Valid email!")
+      return
+    }
+    if(password.length<8){
+      toast.error("Password length must be greater than 8!")
+      return
+    }
 
   
     const credentials = { email, password }; // Make sure credentials are correctly set
@@ -21,14 +34,21 @@ const Login = () => {
     try {
       const result = await loginUser(credentials);
       if (result.success) {
-        localStorage.setItem('authToken', result.token);  // or sessionStorage.setItem('token', result.token);;
-        navigate('/'); // Redirect to home page or dashboard
+        localStorage.setItem('authToken', result.token);  
+        navigate('/'); 
 
-        // Redirect to another page or store token here
+
       } else {
         setError(result.message || 'Login failed');
       }
     } catch (err) {
+      const status=err.status
+      if(status===401){
+        toast.error("Invalid Credentials!")
+      }
+      else if(status===500){
+        toast.error("Server Error! Please try again later.")
+      }
       console.error('Error during login:', err);
       setError('An error occurred. Please try again.');
     } finally {
@@ -63,7 +83,7 @@ const Login = () => {
           </div>
           <div className={styles.options}>
             
-            <a href="#" className={styles.link}>Forgot Password?</a>
+
           </div>
           <button type="submit" className={styles.button}>Sign In</button>
           <div className={styles.switch}>

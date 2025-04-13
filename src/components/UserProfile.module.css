@@ -1,0 +1,52 @@
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #e6f7f1;
+    min-height: 100vh;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 128, 96, 0.15);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #b2dfdb;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #a7f3d0;
+  }
+  
+  .name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #007f5f;
+  }
+  
+  .email {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+  }
+  
+  .infoBox {
+    background-color: #f0fdfa;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    text-align: left;
+  }
+  
+  .infoBox p {
+    margin: 0.5rem 0;
+    color: #065f46;
+  }

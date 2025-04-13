@@ -8,6 +8,8 @@ import { ToastContainer } from 'react-toastify';
 import ChatBot from './components/ChatBot';
 import NearbyHospitals from './components/NearbyHospitals';
 import 'react-toastify/dist/ReactToastify.css';
+import PersonalDetails from './components/PersonalDetails';
+import UserProfile from './components/UserProfile';
 function App() {
   return (
     <div>
@@ -26,6 +28,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Home />} />
         <Route path="/bot" element={<ChatBot />} />
+        <Route path="/profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>}/>
+        <Route path="/details" element={<ProtectedRoute><PersonalDetails /></ProtectedRoute>} />
         <Route path="/loc" element={<NearbyHospitals />} />
       </Routes>
     </Router>

@@ -1,6 +1,6 @@
-// middleware/auth.js
+
 const jwt = require('jsonwebtoken');
-const SECRET_KEY = process.env.SECRET_KEY; // use the same key from your login
+const SECRET_KEY = process.env.SECRET_KEY; 
 
 const verifyToken = (req, res, next) => {
   console.log("Entered middleware");
@@ -11,6 +11,11 @@ const verifyToken = (req, res, next) => {
   }
 
   const token = authHeader.split(" ")[1];
+  if (!token) {
+    console.log("No token in header");
+    return res.status(403).json({ message: "Token format is incorrect" });
+  }
+
   console.log("Token received:", token);
 
   try {

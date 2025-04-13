@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const userRoutes = require('./router/routes'); // adjust path if needed
+const userRoutes = require('./router/routes'); 
 
 const app = express();
 
-// Enable CORS for all origins (or specify your frontend URL if you want to restrict it)
+
 app.use(cors()); 
 
 app.use(express.json());

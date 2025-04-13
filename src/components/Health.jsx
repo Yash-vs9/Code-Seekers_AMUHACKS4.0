@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import styles from './Health.module.css';
-
+import styles from './Health.module.css'; 
+import { sendScore } from './api';
+import { toast } from 'react-toastify';
 
 const Health = () => {
   const questions = [
@@ -38,7 +39,7 @@ const Health = () => {
     setAnswers(updatedAnswers);
   };
 
-  const handleClick = () => {
+  const handleClick = async() => {
     let total = 0;
 
     answers.forEach((ans, index) => {
@@ -61,6 +62,9 @@ const Health = () => {
     });
 
     setScore(total);
+    await sendScore(total)
+    toast.success("Score submitted successfully!");
+
   };
 
   const goBack = () => {
@@ -68,42 +72,39 @@ const Health = () => {
   };
 
   return (
-
-    <div className={styles.healthPage}>
-      <div className={styles.back}>
-        <button className={styles.retreat} onClick={goBack}>Go Back</button>
-        <div className={styles.healthContainer}>
-          {questions.map((question, qIndex) => (
-            <div className={styles.questionCard} key={qIndex}>
-              <p className={styles.questionText}>{question}</p>
-              <div className={styles.optionsList}>
-                {options[qIndex].map((opt, i) => (
-                  <label key={i} className={styles.optionItem}>
-                    <input
-                      type="radio"
-                      name={`question-${qIndex}`}
-                      checked={answers[qIndex] === i}
-                      onChange={() => handleOptionChange(qIndex, i)}
-                    />
-                    {opt}
-                  </label>
-                ))}
-              </div>
+    <div className={styles.healthWrapper}>
+      <div className={styles.header}>
+        <button className={styles.backButton} onClick={goBack}>Go Back</button>
+      </div>
+      <div className={styles.container}>
+        {questions.map((question, qIndex) => (
+          <div className={styles.card} key={qIndex}>
+            <p className={styles.question}>{question}</p>
+            <div className={styles.options}>
+              {options[qIndex].map((opt, i) => (
+                <label key={i} className={styles.option}>
+                  <input
+                    type="radio"
+                    name={`question-${qIndex}`}
+                    checked={answers[qIndex] === i}
+                    onChange={() => handleOptionChange(qIndex, i)}
+                  />
+                  {opt}
+                </label>
+              ))}
             </div>
-          ))}
-          <button className={styles.submitBtn} onClick={handleClick}>SUBMIT</button>
+          </div>
+        ))}
+        <button className={styles.submitButton} onClick={handleClick}>Submit</button>
 
-          {score !== null && (
-            <div className={styles.scoreDisplay}>
-              <br />
-              <h3>Your Health Score: {score} / 10</h3>
-              <p>{score > 7 ? "Great! Keep it up 💪" : "Consider improving your habits ❤️"}</p>
-            </div>
-          )}
-        </div>
+        {score !== null && (
+          <div className={styles.score}>
+            <h3>Your Health Score: {score} / 10</h3>
+            <p>{score > 7 ? "Great! Keep it up 💪" : "Consider improving your habits ❤️"}</p>
+          </div>
+        )}
       </div>
     </div>
-
   );
 };
 
